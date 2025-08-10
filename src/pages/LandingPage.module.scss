@@ -1,0 +1,164 @@
+.landingPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #2c2b2b;
+
+  .card {
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 32px;
+      text-align: center;
+
+      h2 {
+        margin: 16px 0 0;
+        color: #1a1a1a;
+      }
+    }
+
+    .form {
+      max-width: 100%;
+
+      :global {
+        .ant-form-item-label {
+          font-weight: 500;
+        }
+
+        .ant-radio-group {
+          width: 100%;
+          display: flex;
+          gap: 8px;
+
+          .ant-radio-button-wrapper {
+            flex: 1;
+            text-align: center;
+          }
+        }
+
+        .ant-input {
+          border-radius: 4px;
+        }
+
+        .ant-btn {
+          height: 40px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  padding: 32px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+}
+
+.subtitle {
+  display: block;
+  margin-bottom: 32px;
+  color: #666;
+  font-size: 16px;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input {
+  height: 48px;
+  font-size: 16px;
+  border-radius: 8px;
+  
+  &:hover, &:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  }
+}
+
+.submitButton {
+  height: 48px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.helpText {
+  margin-top: 32px;
+  text-align: left;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+
+  ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin: 4px 0;
+    color: #666;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .landingPage {
+    padding: 16px;
+
+    .card {
+      .logo {
+        margin-bottom: 24px;
+
+        h2 {
+          font-size: 24px;
+        }
+      }
+
+      .form {
+        :global {
+          .ant-radio-group {
+            flex-direction: column;
+            gap: 4px;
+
+            .ant-radio-button-wrapper {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .landingPage {
+    padding: 12px;
+
+    .card {
+      .logo {
+        margin-bottom: 20px;
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+} 

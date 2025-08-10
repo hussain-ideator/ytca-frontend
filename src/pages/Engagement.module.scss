@@ -1,0 +1,53 @@
+.engagementPage {
+  padding: 24px;
+  background: #f0f2f5;
+  min-height: 100vh;
+
+  .subtitle {
+    margin-bottom: 24px;
+    color: #888;
+    font-size: 1rem;
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+
+  .chartCard {
+    margin-bottom: 32px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+}
+
+// Responsive styles
+@media (max-width: 992px) {
+  .engagementPage {
+    padding: 12px;
+    .chartCard {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .engagementPage {
+    padding: 8px;
+    .chartCard {
+      margin-bottom: 12px;
+    }
+    .ant-row {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ant-col {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+} 

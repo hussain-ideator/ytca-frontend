@@ -1,0 +1,608 @@
+.layout {
+  min-height: 100vh;
+  position: relative;
+}
+
+.sider {
+  background: #001529;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  
+  &.collapsed {
+    width: 80px !important;
+    min-width: 80px !important;
+    max-width: 80px !important;
+  }
+  
+  .logo {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+}
+
+.header {
+  background: white;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: calc(100% - 250px);
+  left: 250px;
+  z-index: 999;
+  height: 64px;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+
+  &.expanded {
+    width: calc(100% - 80px);
+    left: 80px;
+  }
+
+  .menuButton {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    color: #1a1a1a;
+    margin-left: auto;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+      color: #1890ff;
+    }
+  }
+
+  .headerTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: all 0.3s;
+  }
+}
+
+.content {
+  padding: 24px;
+  background: #f5f5f5;
+  min-height: calc(100vh - 64px);
+  margin-left: 250px;
+  margin-top: 64px;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  position: relative;
+  overflow-x: hidden;
+
+  &.expanded {
+    margin-left: 80px;
+  }
+
+  .pageContent {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h1 {
+      margin-bottom: 24px;
+      color: #1a1a1a;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+    }
+
+    .welcomeText {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-top: 32px;
+    }
+  }
+}
+
+.quickOverview {
+  margin-bottom: 32px;
+
+  .channelInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: #fafafa;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .channelAvatar {
+      margin-right: 24px;
+      border: 2px solid #ff0000;
+    }
+
+    .channelDetails {
+      .channelName {
+        margin: 0 0 8px 0 !important;
+        color: #1a1a1a;
+        font-size: 1.5rem;
+      }
+
+      .channelIdContainer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 4px;
+        transition: all 0.3s;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.04);
+        }
+
+        .channelId {
+          font-size: 1rem;
+          color: #666;
+          margin: 0;
+        }
+
+        .copyIcon {
+          color: #666;
+          font-size: 14px;
+          transition: all 0.3s;
+
+          &:hover {
+            color: #ff0000;
+          }
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+  }
+
+  .statCard {
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    :global(.ant-statistic-title) {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    :global(.ant-statistic-content) {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    :global(.anticon) {
+      margin-right: 8px;
+    }
+  }
+}
+
+.inputCard {
+  .form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .radioGroup {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    :global(.ant-radio-group) {
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  .input {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .submitButton {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    background: #ff0000;
+    border-color: #ff0000;
+
+    &:hover {
+      background: #cc0000;
+      border-color: #cc0000;
+    }
+  }
+}
+
+.descriptionSection {
+  margin-top: 32px;
+  padding: 24px;
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+  }
+
+  .welcomeText {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+}
+
+.dashboardButtonContainer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+
+  .dashboardButton {
+    min-width: 200px;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: #ff0000;
+    border-color: #ff0000;
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
+    transition: all 0.3s;
+
+    &:hover {
+      background: #cc0000;
+      border-color: #cc0000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.channelLink {
+  display: inline-block;
+  margin: 8px 0;
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 14px;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  padding: 20px;
+}
+
+.searchCard {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.searchContent {
+  padding: 32px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+}
+
+.subtitle {
+  display: block;
+  margin-bottom: 32px;
+  color: #666;
+  font-size: 16px;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input {
+  height: 48px;
+  font-size: 16px;
+  border-radius: 8px;
+  
+  &:hover, &:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  }
+}
+
+.submitButton {
+  height: 48px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.helpText {
+  margin-top: 32px;
+  text-align: left;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+
+  ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin: 4px 0;
+    color: #666;
+  }
+}
+
+// Media queries for different screen sizes
+@media (max-width: 768px) {
+  .sider {
+    transform: translateX(-100%);
+    
+    &.collapsed {
+      transform: translateX(0);
+      width: 80px !important;
+    }
+  }
+
+  .header {
+    width: 100%;
+    left: 0;
+
+    &.expanded {
+      width: calc(100% - 80px);
+      left: 80px;
+    }
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 16px;
+
+    &.expanded {
+      margin-left: 80px;
+    }
+
+    .pageContent {
+      padding: 20px;
+    }
+  }
+
+  .inputCard {
+    .radioGroup {
+      :global(.ant-radio-group) {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 16px;
+    
+    .headerTitle {
+      font-size: 1.1rem;
+    }
+  }
+
+  .content {
+    padding: 12px;
+
+    .pageContent {
+      padding: 16px;
+    }
+  }
+}
+
+.homePage {
+  padding: 24px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .statsRow {
+    margin-bottom: 24px;
+  }
+
+  .videoInsights {
+    margin-top: 24px;
+
+    .filterForm {
+      margin-bottom: 24px;
+      padding: 16px;
+      background-color: #fafafa;
+      border-radius: 4px;
+
+      :global {
+        .ant-form-item {
+          margin-bottom: 16px;
+          margin-right: 16px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .ant-input-number {
+          width: 120px;
+        }
+
+        .ant-select {
+          width: 120px;
+        }
+      }
+    }
+
+    .loadingContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      background: white;
+      border-radius: 4px;
+    }
+
+    .noData {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      background: white;
+      border-radius: 4px;
+      color: #666;
+      font-size: 16px;
+    }
+
+    :global {
+      .ant-table {
+        background: white;
+      }
+
+      .ant-table-thead > tr > th {
+        background: #fafafa;
+      }
+
+      .ant-table-tbody > tr:hover > td {
+        background: #f5f5f5;
+      }
+    }
+  }
+
+  .channelInfo {
+    margin-bottom: 24px;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .channelHeader {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .channelAvatar {
+        margin-right: 16px;
+      }
+
+      .channelTitle {
+        margin: 0;
+        font-size: 24px;
+      }
+    }
+
+    .channelDescription {
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .channelStats {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .homePage {
+    padding: 16px;
+
+    .videoInsights {
+      .filterForm {
+        :global {
+          .ant-form-item {
+            margin-right: 0;
+            width: 100%;
+          }
+
+          .ant-input-number,
+          .ant-select {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.channelOverviewTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.homePage {
+  padding: 24px;
+  background: #f5f5f5;
+  min-height: calc(100vh - 64px);
+} 

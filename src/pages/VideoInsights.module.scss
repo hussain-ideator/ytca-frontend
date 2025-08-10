@@ -1,0 +1,85 @@
+.videoInsightsPage {
+  padding: 24px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+
+  .filterCard {
+    margin-bottom: 24px;
+
+    .filterForm {
+      :global {
+        .ant-form-item {
+          margin-bottom: 16px;
+          margin-right: 16px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .ant-input-number {
+          width: 120px;
+        }
+
+        .ant-select {
+          width: 120px;
+        }
+      }
+    }
+  }
+
+  .videoCard {
+    .loadingContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+    }
+
+    .noData {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      color: #666;
+      font-size: 16px;
+    }
+
+    :global {
+      .ant-table {
+        background: white;
+      }
+
+      .ant-table-thead > tr > th {
+        background: #fafafa;
+      }
+
+      .ant-table-tbody > tr:hover > td {
+        background: #f5f5f5;
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .videoInsightsPage {
+    padding: 16px;
+
+    .filterCard {
+      .filterForm {
+        :global {
+          .ant-form-item {
+            margin-right: 0;
+            width: 100%;
+          }
+
+          .ant-input-number,
+          .ant-select {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+} 
